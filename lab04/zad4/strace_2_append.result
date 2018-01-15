@@ -1,0 +1,30 @@
+execve("./append", ["./append", "testfile", "5"], [/* 45 vars */]) = 0
+brk(0)                                  = 0xf4f000
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f7426fef000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=97258, ...}) = 0
+mmap(NULL, 97258, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f7426fd7000
+close(3)                                = 0
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+open("/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\200\30\2\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=1815224, ...}) = 0
+mmap(NULL, 3929304, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f7426a0f000
+mprotect(0x7f7426bc4000, 2097152, PROT_NONE) = 0
+mmap(0x7f7426dc4000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1b5000) = 0x7f7426dc4000
+mmap(0x7f7426dca000, 17624, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f7426dca000
+close(3)                                = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f7426fd6000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f7426fd5000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f7426fd4000
+arch_prctl(ARCH_SET_FS, 0x7f7426fd5700) = 0
+mprotect(0x7f7426dc4000, 16384, PROT_READ) = 0
+mprotect(0x600000, 4096, PROT_READ)     = 0
+mprotect(0x7f7426ff1000, 4096, PROT_READ) = 0
+munmap(0x7f7426fd7000, 97258)           = 0
+write(2, "Usage:\n\t./append file period_tim"..., 40Usage:
+	./append file period_time bytes
+) = 40
+exit_group(-1)                          = ?

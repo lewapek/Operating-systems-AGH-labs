@@ -1,0 +1,2 @@
+Po doprowadzeniu do sytuacji z dzieleniem przez 0 w jednym z utworzonych watkow, program przerywa dzialanie (wszystkie watki zostaja zabite), a na ekranie pojawia sie komunikat: "Floating point exception (core dumped)".
+System operacyjny: Ubuntu 12.04 LTS

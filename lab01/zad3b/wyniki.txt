@@ -1,0 +1,132 @@
+Wyniki testow dla poszczegolnych programow.
+
+
+Program 1
+Opcja optymalizacyjna: -O1
+a) kompilacja na domyslna architekture
+	a.a) kompilacja bez optymalizacji
+		gcc prog1.c -Wall -pedantic && time ./a.out
+		
+		real	0m10.093s
+		user	0m10.069s
+		sys	0m0.004s
+	a.b) kompilacja z optymalizacja
+		gcc prog1.c -Wall -pedantic -O1 && time ./a.out
+
+		real	0m0.815s
+		user	0m0.812s
+		sys	0m0.000s
+b) kompilacja na odpowiadajaca architekture
+	b.a) kompilacja bez optymalizacji
+		gcc prog1.c -Wall -pedantic -march=native && time ./a.out
+
+		real	0m9.890s
+		user	0m9.873s
+		sys	0m0.000s
+	b.b) kompilacja z optymalizacja
+		gcc prog1.c -Wall -pedantic -march=native -O1 && time ./a.out
+
+		real	0m0.809s
+		user	0m0.804s
+		sys	0m0.004s
+Komentarz:
+Flaga -O1 zmniejszyla czas wykonania programu ponad 10x! Zapewne mnozenia stalych nie byly niepotrzebnie wykonywane wiele razy.
+Przy kompilacji pod odpowiednia architekture procesora przyspieszenie jest niewielkie.
+
+
+Program 2
+Opcja optymalizacyjna: -O2
+a) kompilacja na domyslna architekture
+	a.a) kompilacja bez optymalizacji
+		gcc prog2.c -Wall -pedantic && time ./a.out
+
+		real	0m12.616s
+		user	0m12.589s
+		sys	0m0.000s
+	a.b) kompilacja z optymalizacja
+		gcc prog2.c -Wall -pedantic -O2 && time ./a.out
+
+		real	0m5.149s
+		user	0m5.140s
+		sys	0m0.000s
+b) kompilacja na odpowiadajaca architekture
+	b.a) kompilacja bez optymalizacji
+		gcc prog2.c -Wall -pedantic -march=native && time ./a.out
+
+		real	0m12.519s
+		user	0m12.493s
+		sys	0m0.004s
+	b.b) kompilacja z optymalizacja
+		gcc prog2.c -Wall -pedantic -march=native -O2 && time ./a.out
+
+		real	0m5.154s
+		user	0m5.140s
+		sys	0m0.000s
+Komentarz:
+Flaga -O2 zredukowala czas wykonania programu o ponad polowe. Jest to zalecana flaga optymalizacyjna. To, ze w porownaniu z programem 1. uzyskano mniejsze przyspieszenie nie oznacza, ze optymalizacja -O2 jest mniej skuteczna od -O1. Wynika to ze specyfiki napisanych programow.
+Kompilacja pod architekture odpowiadajaca procesorowi nie przyspieszyla programu (badz przyspieszyla w stopniu sladowym).
+
+
+Program 3
+Opcja optymalizacyjna: -ffast-math
+a) kompilacja na domyslna architekture
+	a.a) kompilacja bez optymalizacji
+		gcc prog3.c -lm -Wall -pedantic && time ./a.out
+
+		real	0m5.863s
+		user	0m5.848s
+		sys	0m0.000s
+	a.b) kompilacja z optymalizacja
+		gcc prog3.c -lm -Wall -pedantic -O1 -ffast-math && time ./a.out
+
+		real	0m0.044s
+		user	0m0.040s
+		sys	0m0.000s
+b) kompilacja na odpowiadajaca architekture
+	b.a) kompilacja bez optymalizacji
+		 gcc prog3.c -lm -Wall -pedantic -march=native && time ./a.out
+
+		real	0m5.743s
+		user	0m5.732s
+		sys	0m0.000s
+	b.b) kompilacja z optymalizacja
+		gcc prog3.c -lm -Wall -pedantic -march=native -O1 -ffast-math && time ./a.out
+
+		real	0m0.038s
+		user	0m0.032s
+		sys	0m0.004s
+Komentarz:
+Opcja (conajmniej) -O1 jest potrzebna do zadzialania specyficznych flag optymalizacyjnych. Flaga -ffast-math niesamowicie przyspieszyla dzialanie programu (ponad 100 razy). Jest ona bardzo przydatna w kwestii obliczen matematycznych.
+W porownaniu do 2 poprzednich programow, zauwazalna (choc niewielka) jest poprawa szybkosci przy kompilacja na architekture odpowiadajaca procesorowi.
+
+Program 4
+Opcja optymalizacyjna: --funroll-loops
+a) kompilacja na domyslna architekture
+	a.a) kompilacja bez optymalizacji
+		gcc prog4.c -Wall -pedantic && time ./a.out
+
+		real	0m8.232s
+		user	0m8.217s
+		sys	0m0.000s
+	a.b) kompilacja z optymalizacja
+		gcc prog4.c -Wall -pedantic -O1 -funroll-loops && time ./a.out
+
+		real	0m0.316s
+		user	0m0.312s
+		sys	0m0.000s
+b) kompilacja na odpowiadajaca architekture
+	b.a) kompilacja bez optymalizacji
+		gcc prog4.c -Wall -pedantic -march=native && time ./a.out
+
+		real	0m8.209s
+		user	0m8.193s
+		sys	0m0.000s
+	b.b) kompilacja z optymalizacja
+		gcc prog4.c -Wall -pedantic -march=native -O1 -funroll-loops && time ./a.out
+
+		real	0m0.315s
+		user	0m0.312s
+		sys	0m0.000s
+Komentarz:
+Opcja (conajmniej) -O1 jest potrzebna do zadzialania specyficznych flag optymalizacyjnych. Flaga -funroll-loops sprawdza sie bardzo dobrze (jesli chodzi o przyspieszenie, nie ilosc generowanego kodu) w przypadku wystepowania petli, ktorych ilosc iteracji moze byc znana w czasie kompilacji.
+Kompilacja pod architekture odpowiadajaca procesorowi nie przyspieszyla programu (badz przyspieszyla w stopniu sladowym).

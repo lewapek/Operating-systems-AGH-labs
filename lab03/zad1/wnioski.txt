@@ -1,0 +1,2 @@
+Funkcje biblioteczne dzialaja podobnie do systemowych. Co ciekawe czasem nawet 'nie gorzej'. Intuicyjnie wydawaloby sie, ze funkcje biblioteczne wywoluja systemowe, przez co beda dluzej dzialac. Jest tak dlatego, ze funkcje biblioteczne sa buforowane. Bez buforowania dzialaja gorzej niz systemowe.
+

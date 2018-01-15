@@ -1,0 +1,186 @@
+./test.sh
+
+
+    struct size = 4, number of structs = 500
+    Library functions:
+-------------------------------------
+Time measurement
+From the beginning:
+	User time:   0.11
+	System time: 0.12
+From last measurement:
+	User time:   0.11
+	System time: 0.12
+-------------------------------------
+    System functions:
+-------------------------------------
+Time measurement
+From the beginning:
+	User time:   0.04
+	System time: 0.20
+From last measurement:
+	User time:   0.04
+	System time: 0.20
+-------------------------------------
+
+    struct size = 4, number of structs = 1000
+    Library functions:
+-------------------------------------
+Time measurement
+From the beginning:
+	User time:   0.34
+	System time: 0.63
+From last measurement:
+	User time:   0.34
+	System time: 0.63
+-------------------------------------
+    System functions:
+-------------------------------------
+Time measurement
+From the beginning:
+	User time:   0.25
+	System time: 0.68
+From last measurement:
+	User time:   0.25
+	System time: 0.68
+-------------------------------------
+
+
+    struct size = 512, number of structs = 500
+    Library functions:
+-------------------------------------
+Time measurement
+From the beginning:
+	User time:   0.13
+	System time: 0.23
+From last measurement:
+	User time:   0.13
+	System time: 0.23
+-------------------------------------
+    System functions:
+-------------------------------------
+Time measurement
+From the beginning:
+	User time:   0.05
+	System time: 0.30
+From last measurement:
+	User time:   0.05
+	System time: 0.30
+-------------------------------------
+
+    struct size = 512, number of structs = 1000
+    Library functions:
+-------------------------------------
+Time measurement
+From the beginning:
+	User time:   0.49
+	System time: 0.99
+From last measurement:
+	User time:   0.49
+	System time: 0.99
+-------------------------------------
+    System functions:
+-------------------------------------
+Time measurement
+From the beginning:
+	User time:   0.31
+	System time: 1.11
+From last measurement:
+	User time:   0.31
+	System time: 1.11
+-------------------------------------
+
+
+    struct size = 4096, number of structs = 500
+    Library functions:
+-------------------------------------
+Time measurement
+From the beginning:
+	User time:   0.19
+	System time: 0.51
+From last measurement:
+	User time:   0.19
+	System time: 0.51
+-------------------------------------
+    System functions:
+-------------------------------------
+Time measurement
+From the beginning:
+	User time:   0.03
+	System time: 0.49
+From last measurement:
+	User time:   0.03
+	System time: 0.49
+-------------------------------------
+
+    struct size = 4096, number of structs = 1000
+    Library functions:
+-------------------------------------
+Time measurement
+From the beginning:
+	User time:   0.95
+	System time: 1.81
+From last measurement:
+	User time:   0.95
+	System time: 1.81
+-------------------------------------
+    System functions:
+-------------------------------------
+Time measurement
+From the beginning:
+	User time:   0.31
+	System time: 1.74
+From last measurement:
+	User time:   0.31
+	System time: 1.74
+-------------------------------------
+
+
+    struct size = 8192, number of structs = 500
+    Library functions:
+-------------------------------------
+Time measurement
+From the beginning:
+	User time:   0.25
+	System time: 0.70
+From last measurement:
+	User time:   0.25
+	System time: 0.70
+-------------------------------------
+    System functions:
+-------------------------------------
+Time measurement
+From the beginning:
+	User time:   0.04
+	System time: 0.64
+From last measurement:
+	User time:   0.04
+	System time: 0.64
+-------------------------------------
+
+    struct size = 8192, number of structs = 1000
+    Library functions:
+-------------------------------------
+Time measurement
+From the beginning:
+	User time:   0.97
+	System time: 2.90
+From last measurement:
+	User time:   0.97
+	System time: 2.90
+-------------------------------------
+    System functions:
+-------------------------------------
+Time measurement
+From the beginning:
+	User time:   0.23
+	System time: 2.67
+From last measurement:
+	User time:   0.23
+	System time: 2.67
+-------------------------------------
+    Temporary files deleting...
+
+Wnioski:
+Funkcje biblioteczne dzialaja podobnie do systemowych. Co ciekawe czasem nawet 'nie gorzej'. Intuicyjnie wydawaloby sie, ze funkcje biblioteczne wywoluja systemowe, przez co beda dluzej dzialac. Jest tak dlatego, ze funkcje biblioteczne sa buforowane. Bez buforowania dzialaja gorzej niz systemowe.
+

@@ -1,0 +1,36 @@
+SIGUSR1
+Ad. 1
+Wszystkie watki zabite, komunikat: "User defined signal 1"
+Ad. 2
+Wszystkie watki zabite, komunikat: "User defined signal 1"
+Ad. 3
+Proces konczy sie normalnie, pojawia sie komunikat o nadejsciu sygnalu.
+Ad. 4
+Proces przebiega normalnie (sygnal nie zostal przechwycony).
+Ad. 5
+Proces konczy sie normalnie, pojawia sie komunikat o nadejsciu sygnalu.
+
+SIGTERM
+Ad. 1
+Wszystkie watki zabite
+Ad. 2
+Wszystkie watki zabite
+Ad. 3
+Proces konczy sie normalnie, pojawia sie komunikat o sygnale
+Ad. 4
+Proces przebiega normalnie (sygnal nie zostal przechwycony).
+Ad. 5
+Proces konczy sie normalnie, pojawia sie komunikat o  nadejsciu sygnalu
+
+SIGKILL
+Ad. 1
+Wszystkie watki zabite, komunikat: "Killed"
+Ad. 2-5
+Nie dotyczy, sygnalu SIGKILL nie mozna przechwycic ani zamaskowac, wszelkie proby zakoncza sie zabiciem procesu i wypisaniem komunikatu "killed"
+
+SIGSTOP
+Ad. 1
+Proces zostaje wstrzymany (stopped).
+Ad. 2-5
+Nie dotyczy, sygnalu SIGSTOP nie mozna przechwycic ani zamaskowac, wszelkie proby zakoncza sie bezwarunkowym wstrzymaniem procesu.
+

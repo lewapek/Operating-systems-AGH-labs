@@ -1,0 +1,16 @@
+In order to create proper files, you have to type commands:
+aclocal
+autoconf
+autoheader
+automake -a
+
+To compile and execute program, type:
+./configure
+make
+./src/hello input_file operation
+
+To compile in double precision, type:
+./configure --enable-double
+make
+./src/hello input_file operation
+
